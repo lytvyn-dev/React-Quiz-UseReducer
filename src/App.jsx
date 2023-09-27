@@ -100,7 +100,11 @@ function App() {
 
               <Footer>
                 <Timer time={time} onSetTimer={dispatch} />
-                <button onClick={() => dispatch({ type: "nextQuestion" })} className="btn btn-ui">
+                <button
+                  disabled={!answer}
+                  onClick={() => dispatch({ type: "nextQuestion" })}
+                  className="btn btn-ui"
+                >
                   {index + 1 === 15 ? "Finish" : "Next"}
                 </button>
               </Footer>
